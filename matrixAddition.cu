@@ -86,7 +86,7 @@ int main() {
   printf("Time to calculate results on GPU: %f ms\n", elapsedTime);
 
   // Copy results to device
-  cudaMemcpy(c_h, c_d, N*sizeof(int), cudaMemcpyDeviceToHost);
+  cudaMemcpy(c_h, c_d, size, cudaMemcpyDeviceToHost);
   
   // Start timer for CPU
   cudaEventRecord(start, 0);
