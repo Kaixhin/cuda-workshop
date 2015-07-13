@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cuda.h>
+#define THREADS_PER_BLOCK 1024
 
 void matrixAdd(int *a, int *b, int *c, int N) {
   int index;
@@ -18,10 +19,10 @@ __global__ void matrixAddKernel(int *a, int *b, int *c, int N) {
 }
 
 int main() {
-  int N = 100; // Define size of 1 side of square matrix
+  int N = 4096; // Define size of 1 side of square matrix
   // Initialise grid and block variables
-  dim3 grid(1, 1, 1);
-  dim3 block(N, N, 1);
+  dim3 grid(N / THREADS_PER_BLOCK, 1, 1);
+  dim3 block(THREADS_PER_BLOCK, 1, 1);
 
   // Initialise host pointers (dynamically allocated memory) and device pointers
   int *a_h;

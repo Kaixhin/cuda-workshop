@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <cuda.h>
 #define N 4096 // Define size of array
-#define N_THREADS 128
+#define THREADS_PER_BLOCK 1024
 
 __global__ void vectorAddKernel(int *a, int *b, int *c) {
   int i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -10,8 +10,8 @@ __global__ void vectorAddKernel(int *a, int *b, int *c) {
 
 int main() {
   // Initialise grid and block variables
-  dim3 grid(N / N_THREADS, 1, 1);
-  dim3 block(N_THREADS, 1, 1);
+  dim3 grid(N / THREADS_PER_BLOCK, 1, 1);
+  dim3 block(THREADS_PER_BLOCK, 1, 1);
 
   // Initialise host arrays and device pointers
   int a_h[N];
