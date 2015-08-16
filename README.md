@@ -6,6 +6,8 @@ Code from exercises for the July 2015 CUDA Workshop at Imperial College London o
 Links (Private)
 ---------------
 
+The lectures and practicals from the workshop are to only be made available for those who attended the workshop. Please do not request access otherwise.
+
 - [Lecture 1](https://drive.google.com/open?id=0B0ajnlL6BEXJTGRxdDRTZXJFR3M)
 - [Practical 1](https://drive.google.com/open?id=0B0ajnlL6BEXJYWN5WktDRWp4WXc)
 - [Practical 2](https://drive.google.com/open?id=0B0ajnlL6BEXJWWcyX3hDcnRhOFU)
